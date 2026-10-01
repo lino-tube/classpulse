@@ -1,0 +1,25 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>ClassPulse | Student Dashboard</title><link rel="stylesheet" href="css/styles.css"></head><body data-role="student"><main class="student-shell"><header class="student-topbar">
+  <div class="student-brand"><span class="brand-dot"></span> ClassPulse</div>
+  <nav class="student-nav" aria-label="Student navigation">
+    <a data-nav-page="student-dashboard.html" href="student-dashboard.html">Dashboard</a>
+    <a data-nav-page="student-checkin.html" href="student-checkin.html">Check In</a>
+    <button type="button" data-logout>Logout</button>
+  </nav>
+</header><div class="page-heading"><div><h1>Welcome, Student</h1><p>Share a quick classroom signal so your lecturer can respond while the lesson is still happening.</p></div></div><section class="class-banner"><div><div class="class-label">Current Class</div><h1>PROG6112</h1><p>Java Arrays Practical</p></div><div><div class="class-label">Lecturer</div><strong>Current Lecturer</strong></div><div><div class="class-label">Session status</div><div class="status-live">LIVE</div></div></section><section class="card pulse-card" aria-labelledby="pulseHeading">
+  <h2 id="pulseHeading">How are you doing with the current activity?</h2>
+  <p>Select the option that best represents your understanding right now.</p>
+  <form id="pulseForm" novalidate>
+    <input type="hidden" id="pulseStatus" name="status">
+    <div class="choice-grid" role="group" aria-label="Understanding status">
+      <button class="choice-card" type="button" data-status="understand" aria-pressed="false"><div class="choice-title">I Understand</div><div class="choice-copy">I am comfortable with the current concept.</div></button>
+      <button class="choice-card" type="button" data-status="unsure" aria-pressed="false"><div class="choice-title">I’m Unsure</div><div class="choice-copy">I understand some of it but need another example.</div></button>
+      <button class="choice-card" type="button" data-status="stuck" aria-pressed="false"><div class="choice-title">I’m Stuck</div><div class="choice-copy">I need help before moving forward.</div></button>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label for="topic">Where are you struggling?</label><select class="form-control" id="topic" name="topic"><option value="">Select a topic</option><option>Creating arrays</option><option>Array Indexing</option><option>Looping through arrays</option><option>One-dimensional arrays</option><option>Two-dimensional arrays</option></select></div>
+      <div class="form-group"><label for="note">Optional note</label><textarea class="form-control" id="note" name="note" placeholder="Briefly explain what is confusing you…"></textarea></div>
+    </div>
+    <div class="inline-error" id="pulseError" role="alert"></div>
+    <button class="btn btn-primary" type="submit">Submit Check-in</button>
+  </form>
+</section></main><script src="js/app.js"></script><script src="js/auth.js"></script><script src="js/student.js"></script></body></html>
